@@ -58,7 +58,7 @@ def store_mass() -> None:
         f'error: setting mass = {mass}; input.mass() = {input.mass()}'
 
 def calc_y(x: float) -> None:
-    if  angle < 60:
+    if  angle <= 60:
         return np.tan(rad(angle)) * x
 
 def create_rectangle(anchor_x: float, _anchor_y: float, width: float, height: float, angle: float) -> matplotlib.patches.Rectangle:
@@ -137,7 +137,7 @@ def plot() -> None:
     try:
         ax.plot(slope_x, calc_y(slope_x), lw=40, zorder=0)
     except:
-        print(f'error: slope_x = {slope_x}, y = {calc_y(x)}')
+        print(f'error: slope_x = {slope_x}, y = {calc_y(slope_x)}')
 
     x: float = anchor_x
     y: float = calc_y(x)
